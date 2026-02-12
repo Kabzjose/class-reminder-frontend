@@ -1,5 +1,6 @@
 const API_URL = import.meta.env.VITE_API_URL || 'https://class-reminder-backend.onrender.com';
-
+console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
+console.log('Final API_URL:', API_URL);
 
 // Helper function to get auth headers
 const getAuthHeaders = () => {

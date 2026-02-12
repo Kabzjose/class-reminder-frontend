@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL || 'https://class-reminder-backend.onrender.com';
 
 
 // Helper function to get auth headers

@@ -35,36 +35,23 @@ function Register({ onRegister, onSwitchToLogin }) {
       return;
     }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      // actual API call
-      const response = await authAPI.register({
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          password: form.password,
-        }),
-      });
+  try {
+    const data = await authAPI.register({
+      name: form.name,
+      email: form.email,
+      password: form.password,
+    });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Registration failed");
-      }
-
-      // Call parent callback with user data and token
-      onRegister(data.user, data.token);
-    } catch (err) {
-      setError(err.message || "Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
+    // Call parent callback with user data and token
+    onRegister(data.user, data.token);
+  } catch (err) {
+    setError(err.message || "Something went wrong");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="w-full max-w-md">

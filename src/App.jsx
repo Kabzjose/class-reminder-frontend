@@ -221,9 +221,7 @@ function App() {
             <div className="flex justify-between items-center h-16">
               {/* Logo & Title */}
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white text-xl font-bold">📚</span>
-                </div>
+                
                 <div>
                   <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                     Class Reminder
@@ -262,7 +260,7 @@ function App() {
                   onClick={handleLogout}
                   className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-xl font-medium transition-all duration-300 shadow-sm hover:shadow-md flex items-center space-x-2"
                 >
-                  <span>🚪</span>
+                 
                   <span className="hidden sm:inline">Logout</span>
                 </button>
               </div>
@@ -283,7 +281,7 @@ function App() {
                   <p className="text-3xl font-bold text-gray-900 dark:text-white mt-1">{classes.length}</p>
                 </div>
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">📖</span>
+                 
                 </div>
               </div>
             </div>
@@ -298,7 +296,7 @@ function App() {
                   </p>
                 </div>
                 <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">📅</span>
+                 
                 </div>
               </div>
             </div>
@@ -368,9 +366,9 @@ function App() {
           ) : (
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg border border-green-200 dark:border-gray-600 text-center">
               <div className="flex flex-col items-center space-y-3">
-                <span className="text-6xl">🎉</span>
+               
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white">All Done for Today!</h3>
-                <p className="text-gray-600 dark:text-gray-300">No more classes scheduled. Time to relax! ✨</p>
+                <p className="text-gray-600 dark:text-gray-300">No more classes scheduled. Time to relax! </p>
               </div>
             </div>
           )}
@@ -413,7 +411,7 @@ function App() {
                 value={filterDay}
                 onChange={(e) => setFilterDay(e.target.value)}
               >
-                <option value="All">📅 All Days</option>
+                <option value="All">All Days</option>
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>
                 <option value="Wednesday">Wednesday</option>
@@ -427,7 +425,7 @@ function App() {
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
             <div className="bg-gradient-to-r from-purple-500 to-pink-600 px-6 py-4">
               <h3 className="text-xl font-bold text-white flex items-center space-x-2">
-                <span>📋</span>
+             
                 <span>Weekly Schedule</span>
               </h3>
             </div>

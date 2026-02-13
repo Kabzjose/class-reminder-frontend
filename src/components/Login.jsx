@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { authAPI } from '../api/api';
+
 
 function Login({ onLogin, onSwitchToRegister }) {
   const [form, setForm] = useState({
@@ -25,8 +27,8 @@ function Login({ onLogin, onSwitchToRegister }) {
     setLoading(true);
 
     try {
-      // TODO: Replace with actual API call
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      //  actual API call
+      const response = await authAPI.login({
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,9 +58,7 @@ function Login({ onLogin, onSwitchToRegister }) {
         
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-10 text-center">
-          <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <span className="text-5xl">📚</span>
-          </div>
+          
           <h2 className="text-3xl font-bold text-white mb-2">Welcome Back!</h2>
           <p className="text-blue-100">Sign in to manage your classes</p>
         </div>
@@ -68,7 +68,7 @@ function Login({ onLogin, onSwitchToRegister }) {
           {error && (
             <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 rounded-lg">
               <div className="flex items-center space-x-2">
-                <span className="text-red-500 text-xl">⚠️</span>
+                <span className="text-red-500 text-xl"></span>
                 <p className="text-sm text-red-700 dark:text-red-400 font-medium">{error}</p>
               </div>
             </div>
@@ -81,9 +81,7 @@ function Login({ onLogin, onSwitchToRegister }) {
                 Email Address
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <span className="text-gray-400 text-lg">📧</span>
-                </div>
+                
                 <input
                   type="email"
                   name="email"
@@ -103,7 +101,7 @@ function Login({ onLogin, onSwitchToRegister }) {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <span className="text-gray-400 text-lg">🔒</span>
+                
                 </div>
                 <input
                   type="password"
@@ -130,7 +128,7 @@ function Login({ onLogin, onSwitchToRegister }) {
                 </div>
               ) : (
                 <span className="flex items-center justify-center space-x-2">
-                  <span>🚀</span>
+                  
                   <span>Sign In</span>
                 </span>
               )}
@@ -162,7 +160,7 @@ function Login({ onLogin, onSwitchToRegister }) {
 
       {/* Footer Note */}
       <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
-        Secure login powered by JWT authentication 🔐
+        Secure login powered by JWT authentication 
       </p>
     </div>
   );

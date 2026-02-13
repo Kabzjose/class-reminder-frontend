@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { authAPI } from '../api/api';
 function Register({ onRegister, onSwitchToLogin }) {
   const [form, setForm] = useState({
     name: "",
@@ -38,8 +38,8 @@ function Register({ onRegister, onSwitchToLogin }) {
     setLoading(true);
 
     try {
-      // TODO: Replace with actual API call
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      // actual API call
+      const response = await authAPI.register({
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,10 +72,8 @@ function Register({ onRegister, onSwitchToLogin }) {
       <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-transform duration-300">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-10 text-center">
-          <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <span className="text-5xl">✨</span>
-          </div>
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-10 text-center">
+          
           <h2 className="text-3xl font-bold text-white mb-2">Join Us!</h2>
           <p className="text-purple-100">Create your account to get started</p>
         </div>
@@ -85,7 +83,7 @@ function Register({ onRegister, onSwitchToLogin }) {
           {error && (
             <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 rounded-lg">
               <div className="flex items-center space-x-2">
-                <span className="text-red-500 text-xl">⚠️</span>
+             
                 <p className="text-sm text-red-700 dark:text-red-400 font-medium">{error}</p>
               </div>
             </div>
@@ -99,7 +97,7 @@ function Register({ onRegister, onSwitchToLogin }) {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <span className="text-gray-400 text-lg">👤</span>
+                 
                 </div>
                 <input
                   type="text"
@@ -119,9 +117,7 @@ function Register({ onRegister, onSwitchToLogin }) {
                 Email Address
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <span className="text-gray-400 text-lg">📧</span>
-                </div>
+                
                 <input
                   type="email"
                   name="email"
@@ -140,9 +136,7 @@ function Register({ onRegister, onSwitchToLogin }) {
                 Password
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <span className="text-gray-400 text-lg">🔒</span>
-                </div>
+                
                 <input
                   type="password"
                   name="password"
@@ -189,7 +183,7 @@ function Register({ onRegister, onSwitchToLogin }) {
                 </div>
               ) : (
                 <span className="flex items-center justify-center space-x-2">
-                  <span>🎉</span>
+                 
                   <span>Create Account</span>
                 </span>
               )}
@@ -221,7 +215,7 @@ function Register({ onRegister, onSwitchToLogin }) {
 
       {/* Footer Note */}
       <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
-        By signing up, you agree to keep your classes organized 📚
+        By signing up, you agree to keep your classes organized 
       </p>
     </div>
   );

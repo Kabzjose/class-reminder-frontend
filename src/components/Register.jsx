@@ -20,6 +20,13 @@ function Register({ onRegister, onSwitchToLogin }) {
     e.preventDefault();
     setError("");
     
+    // Email validation 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(form.email)) {
+    setError("Please enter a valid email address");
+    return;
+  }
+
     // Validation
     if (!form.name || !form.email || !form.password || !form.confirmPassword) {
       setError("Please fill in all fields");
